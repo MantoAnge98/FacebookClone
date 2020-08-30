@@ -1,5 +1,7 @@
 class ErrorsController < ApplicationController
-    skip_before_action :authenticate_user!
+    before_action :authenticate_user!, except: :action_here
+    #skip_before_action :verify_authenticity_token 
+    #skip_before_action :authenticate_user!, :only => "reply", :raise => false
 
     def not_found
       respond_to do |format|
