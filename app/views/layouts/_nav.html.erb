@@ -2,16 +2,18 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-     <a class="navbar-brand" href="/sessions/new">Facebook Clone</a>
+     <a class="navbar-brand" href="/sessions/new" style="color:#fff!important;">Facebook Clone</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right" style="color:white">
-        <% if logged_in? %> 
-          <li><a href="/blogs">Blog Page</a></li>
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>  
+            <li><a href="/blogs" style="color:#fff!important;">Blog Page</a></li>
+            <li><a href="/blogs/new" style="color:#fff!important;">Create Blog</a></li>
         <% else %> 
-          <li><a href="/sessions/new">Create an account</a></li>
+          <li><a href="/sessions/new" style="color:#fff!important;">Log In</a></li>
+           <li><a href="/users/new" style="color:#fff!important;">Sign Up</a></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -48,6 +48,7 @@ class BlogsController < ApplicationController
     end
 
     def destroy
+        @blog = current_user.blogs.find(params[:id])
         @blog.destroy
         redirect_to blogs_path, notice: "Blog Delete"
     end

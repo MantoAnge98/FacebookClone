@@ -1,4 +1,5 @@
 <h3 style="text-align:center">Blog Page</h1>
+
 <div class="alert alert-success" role="alert"><%= notice%></div>
 <table class="table" style="overflow:hidden;">
    <tr>
@@ -21,9 +22,18 @@
             <%=blog.user.name%>
         </td>
         <td style="text-align:center;width:200px"> 
+        <% if current_user && current_user == blog.user%>
             <%= link_to 'See', blog_path(blog.id) %>
             <%= link_to "Edit", edit_blog_path(blog.id)%>
             <%= link_to "Delete", blog_path(blog.id), method: :delete%> 
+        <%else%>
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true">
+                </span>
+                <span class="sr-only">Sorry:</span>
+                You may not view, modify or delete the content of others. 
+            </div>
+        <% end %>
         </td>
     </tr>
     <% end %>

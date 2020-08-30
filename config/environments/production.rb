@@ -1,9 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  #To set errors in my page
-  config.exceptions_app = self.routes
-
+  config.exceptions_app = ->(env) { ExceptionsController.action(:show).call(env) }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
