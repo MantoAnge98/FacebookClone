@@ -9,7 +9,56 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body style="font-family: 'calibri', sans-serif;">
+    <%= render '/layouts/nav'%>
+
+    <div class="container">
+      <% if logged_in? %> 
+      <!--Mettre le texte dans une span pour le style -->
+      <span class="label label-primary" id="label1">
+       <%= link_to "Profile", user_path(current_user.id), :id => "sp1"  %> 
+      </span>
+      <!-- -->
+      <span class="label label-primary">
+        <%= link_to "Logout", session_path(current_user.id), :id => "sp2",  method: :delete %> 
+      </span>
+      <% else %> 
+      <!-- -->
+      <span class="label label-primary" id="label1">
+        <%= link_to "Sign up", new_user_path, :id => "sp1"%> 
+      </span>
+      <!-- -->
+      <span class="label label-primary">
+        <%= link_to "Login", new_session_path, :id => "sp2" %> 
+      </span>
+      <% end %>
+      <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+          <% flash.each do |key, value| %> 
+          <%= content_tag(:div, value, class: "#{key}") %> 
+          <% end %> 
+        </div>
+        <div class="col-xs-3"></div>
+      </div>
+
+      <!-- -->
+      <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-6">
+          <%= yield %>
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div>
+       <!---->
+       <div class="footer" style="background-color:#365899;">
+        <p>© 2020 FacebookClone @2020</p>
+      </div>
+    </div>
+
   </body>
 </html>
+
+

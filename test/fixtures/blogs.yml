@@ -3,7 +3,9 @@
 one:
   content: MyString
   image: MyText
+  user: one
 
 two:
   content: MyString
   image: MyText
+  user: two

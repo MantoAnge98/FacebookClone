@@ -1,11 +1,19 @@
 <h3>Blog Details</h3>
-<table>
+<table class="table" style="overflow:hidden;">
     <tr>
-        <th>Content</th>
-        <th>Image</th>
+        <th style="width:300px">Content</th>
+        <th style="width:400px">Image</th>
     </tr>
     <tr>
-        <td><%=@blog.content%></td>
-        <td><%=image_tag @blog.image.url%></td>
+        <td style="width:300px;word-break: break-word;">
+            <%=@blog.content%>
+        </td>
+        <td style="width:200px">
+            <div  id="imgShow">
+                <%=image_tag(@blog.image.url alt:'Image') if @blog.image?%>
+            </div>
+            
+        </td>
     </tr>
 </table>
+<p><%= link_to 'Edit', edit_blog_path(@blog)%></p>

@@ -1,22 +1,33 @@
-<h2>Blog Page</h2>
-
-<table>
-    <tr>
-        <th>Content</th>
-        <th>Image</th>
-        <th>See</th>
-        <th>Edit</th>
-        <th>Delete</th>
+<h3 style="text-align:center">Blog Page</h1>
+<div class="alert alert-success" role="alert"><%= notice%></div>
+<table class="table" style="overflow:hidden;">
+   <tr>
+        <th style="width:300px">Content</th>
+        <th style="width:400px">Image</th>
+        <th style="width:200px">User Post</th>
+        <th style="width:200px">Action</th>
     </tr>
     <% @blog.each do |blog| %>
     <tr>
-        <td><%= blog.content%></td>
-        <td><div style="overflow:hidden;border-radius:50px;width:90px;height:90px;"><%=image_tag blog.image.url%></div></td>
-        <td><%= link_to "Show", blog_path(blog.id) %></td>
-        <td><%= link_to "Edit", edit_blog_path(blog.id) %></td>
-        <td><%= link_to "Delete", blog_path(blog.id), method: :delete, data: {confirm:"Delete ?"}%></td>
+        <td style="width:300px; word-break: break-word;">
+            <%= blog.content%>
+        </td>
+        <td style="width:400px">
+            <div id="imgIndex">
+                <%=image_tag blog.image.url%>
+            </div>
+        </td>
+        <td style="width:200px">
+            <%=blog.user.name%>
+        </td>
+        <td style="text-align:center;width:200px"> 
+            <%= link_to 'See', blog_path(blog.id) %>
+            <%= link_to "Edit", edit_blog_path(blog.id)%>
+            <%= link_to "Delete", blog_path(blog.id), method: :delete%> 
+        </td>
     </tr>
     <% end %>
 </table>
+<%= link_to "New Blog", new_blog_path %>
 
 

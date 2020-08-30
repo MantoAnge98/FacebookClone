@@ -1,3 +1,59 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#blog_title{
+    width: 100%;
+    border-radius: 4px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-color: #095b92;
+}
+
+#blog_content{
+    width: 100%;
+    border: 2px solid;
+    border-radius: 4px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-color:  #095b92;
+}
+
+input[type=submit]{
+    background-color: #095b92; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#imgIndex{
+    overflow:hidden;
+    border-radius:50px;
+    transition: transform .2s;
+    width: 100px; 
+    height: 100px; 
+    object-fit: container;
+}
+
+#imgIndex:hover{
+    transform: scale(1.5);
+}
+
+#imgShow img{
+    width: 100%;
+}
+
+#sp1, #sp2{
+    color:white;
+    height: 30px;
+    width: 180px;
+    padding: 0 10px 0 10px;
+}
+#label1{
+    margin-right: 15px;
+}
