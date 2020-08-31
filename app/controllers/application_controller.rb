@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     include SessionsHelper
 
+    add_flash_types :danger, :info, :warning, :success
+
     #Si l'utilisateur actuellement connecté n'existe pas, 
     #redirigez-le vers la page de connexion.
     def authenticate_user

@@ -1,4 +1,4 @@
-<h2>Créer un formulaire</h2>
+<h4>Créer un formulaire</h4>
 <%= form_with(model: @blog, local: true ,url: confirm_blogs_path) do |form| %>
   <% if @blog.errors.any? %>
       <div class="alert alert-danger" role="alert">Please this field must not be empty / Do not also exceed 140 caracters. </div>

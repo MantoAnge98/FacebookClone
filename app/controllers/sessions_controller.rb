@@ -6,9 +6,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)  
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
+      flash[:notice] = 'Connected!'
       redirect_to user_path(user.id)
     else
-      flash.now[:danger] = 'Connexion failure'
+      flash.now[:danger] = 'Connexion failure, Please try again or Sign up'
       render :new
     end
 
