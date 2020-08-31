@@ -1,7 +1,7 @@
 Rails.application.configure do
 
   
-  config.exceptions_app = ->(env) { ExceptionsController.action(:show).call(env) }
+  #config.exceptions_app = ->(env) { ExceptionsController.action(:show).call(env) }
 
    
   config.cache_classes = true

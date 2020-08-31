@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
     before_action :set_blog, only: [:show, :edit, :update, :destroy]
-    
+    # before_action :authenticate_user!
     def index
         @blog = Blog.all
         @user = User.all
@@ -59,13 +59,11 @@ class BlogsController < ApplicationController
 
     private
     def blog_params
-        params.require(:blog).permit(:content, :image, :image_cache)
+        params.require(:blog).permit(:content, :image, :image_cache, :user_id)
     end
 
     def set_blog
         @blog = Blog.find(params[:id])
     end
 
-    
-    
 end

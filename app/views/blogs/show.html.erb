@@ -16,4 +16,18 @@
         </td>
     </tr>
 </table>
-<p><%= link_to 'Edit', edit_blog_path(@blog)%></p>
+
+<div class="row">
+    <div class="col-xs-3"></div>
+    <div class="col-xs-3">
+        <span class="label label-primary" id="label1">
+            <%= link_to 'Edit', edit_blog_path(@blog), :id => "sp1"%> 
+        </span>
+    </div>
+    <div class="col-xs-3">
+        <span class="label label-primary" id="label1">
+            <%= link_to "Retour à la liste des Blogs", blogs_path, :id => "sp1"%> 
+        </span>
+    </div>
+    <div class="col-xs-3"></div>
+</div>
