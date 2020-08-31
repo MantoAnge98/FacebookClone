@@ -15,8 +15,8 @@ class SessionsController < ApplicationController
 
   end
 
-   #Instance pour détruire une session 'utilisateur'
-   def destroy
+  #Instance pour détruire une session 'utilisateur'
+  def destroy
     session.delete(:user_id)
     flash[:notice] = 'Log Out'
     redirect_to new_session_path   

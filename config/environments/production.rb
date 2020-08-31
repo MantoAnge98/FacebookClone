@@ -1,16 +1,12 @@
 Rails.application.configure do
-
   
   #config.exceptions_app = ->(env) { ExceptionsController.action(:show).call(env) }
-
    
   config.cache_classes = true
-
   
   config.eager_load = true
-
  
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   
   config.action_controller.perform_caching = true
  
@@ -23,10 +19,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-
   config.active_storage.service = :local
-
-
   
   config.log_level = :debug
 

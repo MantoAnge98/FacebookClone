@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
 
   #routes to errors
-  get '/404', to: "errors#not_found"
-  get '/500', to: "errors#internal_error"
+  get '404', :to => 'errors#not_found'
+  get '500', :to => 'errors#internal_error'
   
   
   root to: "sessions#new"

@@ -1,13 +1,13 @@
 <h1>Log in</h1> 
 <div class="alert alert-success" role="alert">
-    <%= notice%>
+  <%= notice%>
 </div>
 
- <%= form_with(scope: :session, url: sessions_path, local: true) do |form| %> 
- <%= form.label :email %> 
- <%= form.email_field :email %> 
- <%= form.label :password %> 
- <%= form.password_field :password %> 
- <%= form.submit "Log in" %> 
- <% end %>
+<%= form_with(scope: :session, url: sessions_path, local: true) do |form| %> 
+<%= form.label :email %> 
+<%= form.email_field :email %> 
+<%= form.label :password %> 
+<%= form.password_field :password %> 
+<%= form.submit "Log in" %> 
+<% end %>
     
