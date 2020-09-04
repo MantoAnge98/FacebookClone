@@ -1,0 +1,9 @@
+<h3>Welcome to facebook clone</h3>
+
+<% if logged_in?%>
+  <%= link_to "Liste des Blogs", blogs_path %>
+  <%= link_to 'Profile', user_path(current_user.id)%>
+<%else%>
+  <%= link_to "Log in", new_session_path %>
+  <%= link_to 'Sign Up', new_user_path%>
+<% end %>

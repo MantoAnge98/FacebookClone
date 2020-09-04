@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   get '500', :to => 'errors#internal_error'
   
   
-  root to: "sessions#new"
+  #root to: "sessions#new"
+  root to: "users#index"
 
 end
 

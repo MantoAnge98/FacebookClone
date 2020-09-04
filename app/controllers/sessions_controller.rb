@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
   def new
+    if logged_in?
+      redirect_to users_path, notice: "You are already logged"
+    else
+     render :new
+    end
   end
 
   def create

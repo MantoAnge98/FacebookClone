@@ -4,10 +4,17 @@ class UsersController < ApplicationController
   end
 
   def new
+    if logged_in?
+      redirect_to users_path, notice: "You are already logged"
+    else
       @user = User.new
+    end
   end
 
   def create
+    if logged_in?
+      redirect_to users_path, notice: "You are already logged"
+    else    
       @user = User.new(user_params)
       if @user.save
           #redirect_to user_path(@user.id) 
@@ -15,6 +22,7 @@ class UsersController < ApplicationController
       else
           render :new
       end
+    end
   end
 
   #Pour montrer le contenu enregistrer
